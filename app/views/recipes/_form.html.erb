@@ -41,6 +41,14 @@
     <%= form.time_select :time %>
   </div>
 
+  <div class="field">
+    <%= hidden_field_tag "recipe[category_ids][]", nil %>
+    <% Category.all.each do |c| %>
+      <%= check_box_tag "recipe[category_ids][]", c.id, @recipe.category_ids.include?(c.id) %>
+      <%= c.title %><br>  
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
