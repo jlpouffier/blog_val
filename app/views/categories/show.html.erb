@@ -5,6 +5,9 @@
   <%= @category.title %>
 </p>
 
+<%= image_tag @category.photo.variant(resize_to_limit: [500, 500])%>
+
+
 <p>
   <strong>Description:</strong>
   <%= @category.description %>

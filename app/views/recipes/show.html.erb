@@ -5,6 +5,8 @@
   <%= @recipe.title %>
 </p>
 
+<%= image_tag @recipe.photo.variant(resize_to_limit: [500, 500])%>
+
 <p>
   <strong>Story:</strong>
   <%= markdown(@recipe.story) %>
