@@ -7,17 +7,17 @@
 
 <p>
   <strong>Story:</strong>
-  <%= @recipe.story %>
+  <%= markdown(@recipe.story) %>
 </p>
 
 <p>
   <strong>Instructions:</strong>
-  <%= @recipe.instructions %>
+  <%= markdown(@recipe.instructions) %>
 </p>
 
 <p>
   <strong>Ingredients:</strong>
-  <%= @recipe.ingredients %>
+  <%= markdown(@recipe.ingredients) %>
 </p>
 
 <p>
@@ -29,6 +29,12 @@
   <strong>Time:</strong>
   <%= @recipe.time %>
 </p>
+
+<ul>
+  <% @recipe.categories.each do |c| %>
+    <li><%= link_to c.title, c %></li>
+  <% end %> 
+</ul>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

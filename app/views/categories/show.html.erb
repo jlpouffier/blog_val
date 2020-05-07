@@ -10,5 +10,11 @@
   <%= @category.description %>
 </p>
 
+<ul>
+  <% @category.recipes.each do |r| %>
+    <li><%= link_to r.title, r %></li>
+  <% end %> 
+</ul>
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
