@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  story: MyText
+  instructions: MyText
+  ingredients: MyText
+  complexity: 1
+  time: 2020-05-07 13:15:19
+
+two:
+  title: MyString
+  story: MyText
+  instructions: MyText
+  ingredients: MyText
+  complexity: 1
+  time: 2020-05-07 13:15:19
