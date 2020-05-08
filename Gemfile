@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'rails_admin', '~> 2.0'
+gem "devise"
+
 gem 'redcarpet'
 
 # Use Active Storage variant

@@ -6,11 +6,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Story</th>
-      <th>Instructions</th>
-      <th>Ingredients</th>
-      <th>Complexity</th>
-      <th>Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,8 +15,6 @@
       <tr>
         <td><%= recipe.title %></td>
         <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +22,3 @@
 
 <br>
 
-<%= link_to 'New Recipe', new_recipe_path %>
