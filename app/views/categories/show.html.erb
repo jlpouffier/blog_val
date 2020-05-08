@@ -5,8 +5,9 @@
   <%= @category.title %>
 </p>
 
-<%= image_tag @category.photo.variant(resize_to_limit: [500, 500])%>
-
+<% if @category.photo_attachment %>
+	<%= image_tag @category.photo.variant(resize_to_limit: [500, 500])%>
+<% end %>
 
 <p>
   <strong>Description:</strong>
