@@ -5,7 +5,9 @@
   <%= @recipe.title %>
 </p>
 
-<%= image_tag @recipe.photo.variant(resize_to_limit: [500, 500])%>
+<% if @recipe.photo_attachment %>
+  <%= image_tag @recipe.photo.variant(resize_to_limit: [500, 500])%>
+<% end %>
 
 <p>
   <strong>Story:</strong>
