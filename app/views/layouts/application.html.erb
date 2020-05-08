@@ -12,6 +12,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <p><%=  link_to "Home",  root_path %> | <%=  link_to "Recipes",  recipes_path %> | <%= link_to "Categories", categories_path %> |  <%= link_to "Admin", rails_admin_path %></p>
     <%= yield %>
   </body>
 </html>

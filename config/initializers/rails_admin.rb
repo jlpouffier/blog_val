@@ -1,5 +1,10 @@
 RailsAdmin.config do |config|
 
+  def markdown(text)
+    options = [:hard_wrap, :filter_html, :no_intra_emphasis, :autolink, :underline, :highlight, :quote, :tables, :lax_spacing]
+    Markdown.new(text, *options).to_html.html_safe
+  end
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -7,6 +12,68 @@ RailsAdmin.config do |config|
     warden.authenticate! scope: :user
   end
   config.current_user_method(&:current_user)
+
+  config.model 'Category' do
+    list do 
+      field :title
+    end
+
+    edit do 
+      field :title
+      field :photo
+      field :description
+    end
+
+    show do
+      field :title
+      field :photo
+      field :description do
+        formatted_value do
+          markdown(value)
+        end
+      end
+    end
+  end
+
+  config.model 'Recipe' do
+    list do 
+      field :title
+    end
+
+    edit do
+      field :title
+      field :photo
+      field :story 
+      field :instructions
+      field :ingredients
+      field :complexity
+      field :time
+      field :categories
+    end
+
+    show do
+      field :title
+      field :photo
+      field :story do
+        formatted_value do
+          markdown(value)
+        end
+      end
+      field :instructions do
+        formatted_value do
+          markdown(value)
+        end
+      end
+      field :ingredients do
+        formatted_value do
+          markdown(value)
+        end
+      end
+      field :complexity
+      field :time
+      field :categories
+    end
+  end
 
   ## == CancanCan ==
   # config.authorize_with :cancancan
