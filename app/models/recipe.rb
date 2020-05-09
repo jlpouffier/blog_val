@@ -8,7 +8,6 @@ class Recipe < ApplicationRecord
 	validates :preparation_time, presence: true
 
 	validates :preparation_time, numericality: { only_integer: true, :greater_than_or_equal_to => 1 }
-
 	validates :complexity, numericality: { only_integer: true, :greater_than_or_equal_to => 1, :less_than_or_equal_to => 3 }
 
 	has_and_belongs_to_many :categories
