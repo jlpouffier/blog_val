@@ -1,32 +1,28 @@
 <div class="w3-row">
+
   <div class="w3-col l3 m1">
     <p></p>
   </div>
+
+
   <div class="w3-col l6 m10">
     <section class="w3-row">
       <article class="w3-col w3-padding l6">
         <h1><%= @recipe.title.upcase %></h1>
         <div class="w3-margin-bottom">
-          <i>
+          <%= @recipe.created_at.to_time.strftime('%d/%m/%Y') %> | 
           <% @recipe.categories.each do |category| %>
             <%= link_to category.title, category %>
             <% if category != @recipe.categories.last %>
               |
             <% end %>
           <% end %>
-          </i>
         </div>
         <h5><i class="fas fa-bolt"></i> Difficulté | <%= format_complexity(@recipe) %></h5>
         <% if @recipe.preparation_time? %><h5><i class="fas fa-play"></i> Preparation | <%= format_time(@recipe.preparation_time) %></h5><% end %>
         <% if @recipe.waiting_time? %><h5><i class="fas fa-pause"></i> Repos | <%= format_time(@recipe.waiting_time) %></h5><% end %>
         <% if @recipe.baking_time? %><h5><i class="fas fa-fire"></i> Cuisson | <%= format_time(@recipe.baking_time) %></h5><% end %>
-      
-        <ul>
-
-        </ul>
-
       </article>
-
       <div class="w3-container w3-col l6">
         <%= image_tag @recipe.photo.variant(resize_to_fill: [1000,750]), class: "w3-image w3-round w3-card" %>
       </div>
@@ -38,20 +34,29 @@
       <%= markdown(@recipe.story) %>
       <div class="w3-right-align" style="font-size:60px;line-height:0.6em">❞</div>
     </section>
+
+
     <section class="w3-row">
+
       <div class="w3-container w3-col l4">
         <h2><i class="fas fa-apple-alt"></i> Ingredients</h2>
         <%= markdown(@recipe.ingredients) %>
       </div>
+
       <div class="w3-container w3-col l8">
         <h2><i class="fas fa-flask"></i> Préparation</h2>
         <%= markdown(@recipe.instructions) %>
       </div>
+
     </section>
+
   <%= link_to 'Back', recipes_path %>
+
   </div>
+
   <div class="w3-col l3 m1">
     <p></p>
   </div>
+
 </div>
 
