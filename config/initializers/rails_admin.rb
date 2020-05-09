@@ -48,6 +48,8 @@ RailsAdmin.config do |config|
       field :ingredients
       field :complexity
       field :preparation_time
+      field :waiting_time
+      field :baking_time
       field :categories
     end
 
@@ -71,6 +73,8 @@ RailsAdmin.config do |config|
       end
       field :complexity
       field :preparation_time
+      field :waiting_time
+      field :baking_time
       field :categories
     end
   end

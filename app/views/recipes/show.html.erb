@@ -30,8 +30,13 @@
 </p>
 
 <p>
-  <strong>Preparation Time:</strong>
-  <%= @recipe.preparation_time %>
+  <strong>Times:</strong>
+  <ul>
+    <% if @recipe.preparation_time? %><li>Preparation time: <%= @recipe.preparation_time %></li><% end %>
+    <% if @recipe.waiting_time? %><li>Waiting time: <%= @recipe.waiting_time %></li><% end %>
+    <% if @recipe.baking_time? %><li>Baking time: <%= @recipe.baking_time %></li><% end %>
+  </ul>
+  
 </p>
 
 <p>
