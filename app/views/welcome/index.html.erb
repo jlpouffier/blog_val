@@ -1,8 +1,11 @@
-<h2>Dernieres recettes</h2>
+<div class="hero-image">
+</div>
 
-<section class="w3-row w3-container">
+<h2 class="w3-container">Dernieres recettes</h2>
+
+<section class="w3-row">
 <% @latest_recipes.each do |recipe| %>
-	<article class="w3-col l4 m6">
+	<article class="w3-col l4 ">
 		<a href="<%= recipe_path(recipe) %>">
 			<div class="w3-margin w3-display-container w3-hover-opacity ">
 				<%= image_tag recipe.photo.variant(resize_to_fill: [1000,600]), class: "w3-image w3-round w3-card" %>
