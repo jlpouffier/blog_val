@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_09_165627) do
+ActiveRecord::Schema.define(version: 2020_05_09_170442) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_05_09_165627) do
     t.text "instructions"
     t.text "ingredients"
     t.integer "complexity"
-    t.time "preparation_time"
+    t.integer "preparation_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
