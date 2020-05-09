@@ -1,13 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
+<h1 class=w3-container><%= @recipe.title.upcase %></h1>
 
 <% if @recipe.photo_attachment %>
-  <%= image_tag @recipe.photo.variant(resize_to_limit: [500, 500])%>
+<div class="w3-margin">
+  <%= image_tag @recipe.photo.variant(resize_to_fill: [1000,600]), class: "w3-image w3-round w3-card" %>
+</div>
 <% end %>
+
+<article class=w3-container>
+  <strong>Difficulté: </strong><%= format_complexity(@recipe) %>
+  <br>
+  <% if @recipe.preparation_time? %><strong>Preparation: </strong><%= format_time(@recipe.preparation_time) %><% end %>
+  <br>
+  <% if @recipe.waiting_time? %><strong>Repos: </strong><%= format_time(@recipe.waiting_time) %><% end %>
+  <br>
+  <% if @recipe.baking_time? %><strong>Cuisson: </strong><%= format_time(@recipe.baking_time) %><% end %>
+</article>
 
 <p>
   <strong>Story:</strong>
