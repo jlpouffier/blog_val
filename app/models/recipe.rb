@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
 	has_one_attached :photo
 
 	def self.search(search)
-		search_fields = ["title"]
+		where("title LIKE ?", "%#{search}%") 
 	end
 end
 

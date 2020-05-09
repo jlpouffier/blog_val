@@ -1,4 +1,13 @@
 <h1>YOLO BLOG</h1>
 
 
+<h2>Dernieres recettes</h2>
+<ul>
+<% @latest_recipes.each do |recipe| %>
+	<li><%= link_to recipe.title, recipe %></li>
+<% end %>
+</ul>
+
+
+
 <p><%=	link_to "Recipes",  recipes_path %> | <%=	link_to "Categories", categories_path %></p>

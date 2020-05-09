@@ -34,10 +34,14 @@
   <%= @recipe.time %>
 </p>
 
-<ul>
-  <% @recipe.categories.each do |c| %>
-    <li><%= link_to c.title, c %></li>
+<p>
+  <strong> Categories :</strong>
+  <ul>
+  <% @recipe.categories.each do |category| %>
+    <li><%= link_to category.title, category %></li>
   <% end %> 
-</ul>
+  </ul>
+</p>
+
 
 <%= link_to 'Back', recipes_path %>
