@@ -4,15 +4,23 @@
     <title>BlogValentine</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <p><%=  link_to "Home",  root_path %> | <%=  link_to "Recipes",  recipes_path %> | <%= link_to "Categories", categories_path %> |  <%= link_to "Admin", rails_admin_path %></p>
-    <%= yield %>
+    <nav class="w3-margin">
+      <%=  link_to "Home",  root_path %> | <%=  link_to "Toutes les recettes",  recipes_path %> | <%= link_to "Toutes les catégories", categories_path %>
+    </nav>
+
+    <div class="hero-image">
+    </div>
+    
+    <main class="w3-container">
+      <%= yield %>
+    </main>
   </body>
 </html>
