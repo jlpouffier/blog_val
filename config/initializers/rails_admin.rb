@@ -47,7 +47,7 @@ RailsAdmin.config do |config|
       field :instructions
       field :ingredients
       field :complexity
-      field :time
+      field :preparation_time
       field :categories
     end
 
@@ -70,7 +70,7 @@ RailsAdmin.config do |config|
         end
       end
       field :complexity
-      field :time
+      field :preparation_time
       field :categories
     end
   end
