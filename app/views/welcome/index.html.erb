@@ -1,15 +1,26 @@
 <h2>Dernieres recettes</h2>
-<section class="w3-container">
+
+<section class="w3-row w3-container">
 <% @latest_recipes.each do |recipe| %>
-	<article class="w3-section">
-		<div class="w3-display-container">
-			<%= link_to (image_tag recipe.photo.variant(resize_to_fill: [1000,600]), class: "w3-image w3-opacity w3-round w3-card") , recipe %>
-			<h3 class="w3-display-bottomleft w3-margin w3-text-white"><%= recipe.title.upcase %></h3>
+	<article class="w3-col l4 m6">
+		<div class="w3-margin w3-display-container">
+			<a href="<%= recipe_path(recipe) %>">
+			<%= image_tag recipe.photo.variant(resize_to_fill: [1000,600]), class: "w3-image w3-opacity w3-round w3-card" %>
+			<header class="w3-display-bottomleft w3-margin w3-text-white">
+				<strong><%= recipe.title.upcase %></strong>
+				<br>
+				<% if recipe.complexity == 1 %>
+				Simple
+				<% elsif recipe.complexity == 2 %>
+				Moyen
+				<% elsif recipe.complexity == 3 %>
+				Dificile
+				<% end %>
+			</header>
+			</a>
 		</div>
 	</article>
 <% end %>
 </section>
-
-
 
 <p><%=	link_to "Recipes",  recipes_path %> | <%=	link_to "Categories", categories_path %></p>
