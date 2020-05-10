@@ -15,7 +15,7 @@
 </p>
 
 <ul>
-  <% @category.recipes.each do |r| %>
+  <% @category.recipes.published.each do |r| %>
     <li><%= link_to r.title, r %></li>
   <% end %> 
 </ul>

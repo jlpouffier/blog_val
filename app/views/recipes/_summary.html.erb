@@ -1,13 +1,24 @@
-<div class="w3-margin-bottom">
-  <%= @recipe.created_at.to_time.strftime('%d/%m/%Y') %> | 
-  <% @recipe.categories.each do |category| %>
-    <%= link_to category.title, category %>
-    <% if category != @recipe.categories.last %>
-      |
-    <% end %>
-  <% end %>
-</div>
-<h5><i class="fas fa-bolt"></i> Difficulté | <%= @recipe.complexity_human %></h5>
-<% if @recipe.preparation_time? %><h5><i class="fas fa-play"></i> Preparation | <%= @recipe.preparation_time_human %></h5><% end %>
-<% if @recipe.waiting_time? %><h5><i class="fas fa-pause"></i> Repos | <%= @recipe.waiting_time_human %></h5><% end %>
-<% if @recipe.baking_time? %><h5><i class="fas fa-fire"></i> Cuisson | <%= @recipe.baking_time_human %></h5><% end %>
+<section class="w3-margin-bottom recipe-summary">
+	<i>
+	<%= @recipe.created_at.to_time.strftime('%d/%m/%Y') %> | 
+	<% @recipe.categories.each do |category| %>
+		<%= link_to category.title, category %>
+	    <% if category != @recipe.categories.last %>
+	      |
+	    <% end %>
+	<% end %>
+	</i>
+</section>
+<section class="recipe-summary">
+		<i class="fas fa-bolt"></i> <strong>Difficulté</strong> | <%= @recipe.complexity_human %><br>
+		<% if @recipe.preparation_time? %><i class="fas fa-play"></i> 
+			<strong>Preparation</strong> | <%= @recipe.preparation_time_human %><br>
+		<% end %>
+		<% if @recipe.waiting_time? %><i class="fas fa-pause"></i> 
+			<strong>Repos</strong> | <%= @recipe.waiting_time_human %><br>
+		<% end %>
+		<% if @recipe.baking_time? %>
+			<i class="fas fa-fire"></i> <strong>Cuisson</strong> | <%= @recipe.baking_time_human %><br>
+		<% end %>
+	</p>
+</section>

@@ -1,3 +1,48 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.recipe-title {
+  font-family: 'recipe-title';
+ 
+}
+
+.recipe-summary {
+	font-size: 15px;
+} 
+
+.recipe-story {
+	p {
+		line-height: 24px;
+	}
+	
+}
+
+.recipe-story-quote {
+	font-size:60px;
+	line-height:0.6em;
+}
+
+.recipe-ingredient-and-tool {
+	ul {
+		margin-top: 0;
+		list-style-type: square;
+		li {
+			margin: 10px 0
+		}
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+
+
+
+.recipe-instruction {
+	ol {
+		li {
+			margin: 10px 0
+		}
+	}	
+}
