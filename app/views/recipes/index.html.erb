@@ -1,30 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="hero-image">
+</div>
 
-<h1>Recipes</h1>
+<nav class="w3-margin">
+  <%= link_to root_path do%><i class="fas fa-home"></i><% end %>
+  > Recettes
+</nav>
+
+<h2 class="w3-container">Explorer les recettes par categories</h2>
+<section class="w3-row">
+	<% @categories.each do |category| %>
+		<%= render "category_summary_card", category: category %>
+	<% end %>
+</section>
 
 
-<%= form_tag(recipes_path, :method => "get") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
+<h2 class="w3-container">Toutes les recettes</h2>
+
+<div class="w3-margin">
+  <%= form_tag(recipes_path, :method => "get") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Rechercher parmis toutes les recettes", class: "w3-input w3-border w3-round-xxlarge" %>
+  <% end %>
+</div>
+
+<section class="w3-row">
+<% @recipes.published.each do |recipe| %>
+  <%= render "recipe_summary_card", recipe: recipe %>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.published.each do |recipe| %>
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= link_to 'Show', recipe %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 

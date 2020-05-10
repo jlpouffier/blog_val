@@ -1,23 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
-
-<% if @category.photo_attachment %>
-	<%= image_tag @category.photo.variant(resize_to_limit: [500, 500])%>
+<% if current_user.present? %>
+  <%= render "admin_section" %>
 <% end %>
+<div class="w3-row">
+  <div class="w3-col l3 m1">
+    <p></p>
+  </div>
+  <div class="w3-col l6 m10">
+    <%= render 'category' %>
+    <h2 class="w3-container">Dans cette categorie</h2>
+    <section class="w3-row">
+		<% @category.recipes.published.each do |recipe| %>
+			<%= render "recipe_summary_card", recipe: recipe %>
+		<% end %>
+	</section>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= markdown(@category.description) %>
-</p>
-
-<ul>
-  <% @category.recipes.published.each do |r| %>
-    <li><%= link_to r.title, r %></li>
-  <% end %> 
-</ul>
-
-<%= link_to 'Back', categories_path %>
+  <div class="w3-col l3 m1">
+    <p></p>
+  </div>
+</div>

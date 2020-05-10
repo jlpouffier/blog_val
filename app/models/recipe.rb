@@ -16,8 +16,8 @@ class Recipe < ApplicationRecord
 	scope :published, -> { where(public: true) }
 	scope :unpublished, -> { where(public: false) }
 
-	def self.search(search)
-		where("title LIKE ?", "%#{search}%") 
+	def self.search(search_terms)
+		where("title LIKE ?", "%#{search_terms}%")
 	end
 
 	def preparation_time_human
