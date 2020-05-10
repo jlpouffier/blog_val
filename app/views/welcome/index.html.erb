@@ -12,8 +12,8 @@
 				<header class="w3-display-bottomleft w3-margin w3-text-white">
 					<strong><%= recipe.title.upcase %></strong>
 					<br>
-					<i><%=  format_complexity(recipe) %>
-					| <%= format_global_time(recipe) %>
+					<i><%=  recipe.complexity_human %>
+					| <%= recipe.global_time_human %>
 					</i>
 				</header>
 			</div>
