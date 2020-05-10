@@ -23,16 +23,6 @@ RailsAdmin.config do |config|
       field :photo
       field :description
     end
-
-    show do
-      field :title
-      field :photo
-      field :description do
-        formatted_value do
-          markdown(value)
-        end
-      end
-    end
   end
 
   config.model 'Recipe' do
@@ -46,31 +36,7 @@ RailsAdmin.config do |config|
       field :story 
       field :instructions
       field :ingredients
-      field :complexity
-      field :preparation_time
-      field :waiting_time
-      field :baking_time
-      field :categories
-    end
-
-    show do
-      field :title
-      field :photo
-      field :story do
-        formatted_value do
-          markdown(value)
-        end
-      end
-      field :instructions do
-        formatted_value do
-          markdown(value)
-        end
-      end
-      field :ingredients do
-        formatted_value do
-          markdown(value)
-        end
-      end
+      field :tools
       field :complexity
       field :preparation_time
       field :waiting_time

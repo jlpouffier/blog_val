@@ -19,6 +19,9 @@
     <section class="w3-row">
       <div class="w3-container w3-col l4">
         <%= render "ingredients" %>
+        <% if @recipe.tools? %>
+          <%= render "tools" %>
+        <% end %>
       </div>
       <div class="w3-container w3-col l8">
         <%= render "instructions" %>
