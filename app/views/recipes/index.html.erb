@@ -17,7 +17,7 @@
   </thead>
 
   <tbody>
-    <% @recipes.each do |recipe| %>
+    <% @recipes.published.each do |recipe| %>
       <tr>
         <td><%= recipe.title %></td>
         <td><%= link_to 'Show', recipe %></td>

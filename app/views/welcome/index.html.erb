@@ -2,11 +2,15 @@
 </div>
 
 <h2 class="w3-container">Dernieres recettes</h2>
-
 <section class="w3-row">
-<% @latest_recipes.each do |recipe| %>
+<% @latest_published_recipes.each do |recipe| %>
 	<%= render "recipe_summary_card", recipe: recipe %>
 <% end %>
 </section>
 
-<p><%=	link_to "Recipes",  recipes_path %> | <%=	link_to "Categories", categories_path %></p>
+<% if current_user.present? %>
+<h2 class="w3-container">Recettes non publiées</h2>
+<% @unpublished_recipes.each do |recipe| %>
+	<%= render "recipe_summary_card", recipe: recipe %>
+<% end %>
+<% end %>

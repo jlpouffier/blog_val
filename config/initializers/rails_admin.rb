@@ -33,6 +33,7 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :photo
+      field :public
       field :story 
       field :instructions
       field :ingredients

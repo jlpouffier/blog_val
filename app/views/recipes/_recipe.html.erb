@@ -1,0 +1,23 @@
+<section class="w3-row">
+  <article class="w3-col w3-padding l6">
+    <h1><%= @recipe.title.upcase %></h1>
+    <%= render "summary" %>
+  </article>
+  <div class="w3-container w3-col l6">
+    <%= image_tag @recipe.photo.variant(resize_to_fill: [1000,750]), class: "w3-image w3-round w3-card" %>
+  </div>
+</section>
+<section class="w3-panel">
+  <%= render "story" %>
+</section>
+<section class="w3-row">
+  <div class="w3-container w3-col l4">
+    <%= render "ingredients" %>
+    <% if @recipe.tools? %>
+      <%= render "tools" %>
+    <% end %>
+  </div>
+  <div class="w3-container w3-col l8">
+    <%= render "instructions" %>
+  </div>
+</section>

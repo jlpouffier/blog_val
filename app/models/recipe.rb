@@ -13,6 +13,9 @@ class Recipe < ApplicationRecord
 	has_and_belongs_to_many :categories
 	has_one_attached :photo
 
+	scope :published, -> { where(public: true) }
+	scope :unpublished, -> { where(public: false) }
+
 	def self.search(search)
 		where("title LIKE ?", "%#{search}%") 
 	end
@@ -44,7 +47,6 @@ class Recipe < ApplicationRecord
 			"Difficile"
 		end
 	end
-
 end
 
 
