@@ -19,7 +19,7 @@
       <%= link_to "Toutes les catégories", categories_path %>
       <% if current_user.present? %>
        | <%= link_to "Admin", rails_admin_path %>
-    <% end %>
+      <% end %>
     </nav>
     
     <%= yield %>
