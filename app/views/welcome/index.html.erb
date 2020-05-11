@@ -1,16 +1,14 @@
 <div class="hero-image">
 </div>
+<div class="w3-content ">
+	<h2 class="w3-container">Dernieres recettes</h2>
+	<section class="w3-row">
+	<% @latest_published_recipes.each do |recipe| %>
+		<%= render "recipe_summary_card", recipe: recipe %>
+	<% end %>
+	</section>
 
-<h2 class="w3-container">Dernieres recettes</h2>
-<section class="w3-row">
-<% @latest_published_recipes.each do |recipe| %>
-	<%= render "recipe_summary_card", recipe: recipe %>
-<% end %>
-</section>
-
-<% if current_user.present? %>
-<h2 class="w3-container">Recettes non publiées</h2>
-<% @unpublished_recipes.each do |recipe| %>
-	<%= render "recipe_summary_card", recipe: recipe %>
-<% end %>
-<% end %>
+	<% if current_user.present? %>
+		<%= render "admin_section"  %>
+	<% end %>
+</div>

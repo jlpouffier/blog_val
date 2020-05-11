@@ -1,3 +1,14 @@
-<div class="w3-margin w3-red w3-bar">
-<%= link_to "EDIT", rails_admin.edit_path(model_name: 'recipe', id: @recipe.id) %>	
-</div>
+<%= render "admin_panel" do %>
+	<strong>RECETTE
+	<% if @recipe.public? %>
+	PUBLIQUE <i class="fas fa-eye"></i>
+	<% else %>
+	PRIVÉE <i class="fas fa-eye-slash"></i>
+	<% end %>
+	</strong>	
+	<div class="w3-bar">
+		<%= link_to "OUVRIR DANS L'ADMIN", rails_admin.show_path(model_name: 'recipe', id: @recipe.id), class: "w3-bar-item w3-button w3-mobile" %>	
+		<%= link_to "MODIFIER", rails_admin.edit_path(model_name: 'recipe', id: @recipe.id), class: "w3-bar-item w3-button w3-mobile" %>	
+		<%= link_to "SUPPRIMER", rails_admin.delete_path(model_name: 'recipe', id: @recipe.id), class: "w3-bar-item w3-button w3-mobile" %>	
+	</div>
+<% end %>

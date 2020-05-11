@@ -1,16 +1,7 @@
-<% if current_user.present? %>
-  <%= render "admin_section" %>
-<% end %>
-<div class="w3-row">
-  <div class="w3-col l3 m1">
-    <p></p>
-  </div>
-  <div class="w3-col l6 m10">
-    <%= render 'nav' %>
-    <%= render 'recipe' %>
-  <%= link_to 'Back', recipes_path %>
-  </div>
-  <div class="w3-col l3 m1">
-    <p></p>
-  </div>
+<div class="w3-content ">
+  <%= render 'nav' %>
+  <%= render 'recipe' %>
+  <% if current_user.present? %>
+  	<%= render "admin_section" %>
+  <% end %>
 </div>

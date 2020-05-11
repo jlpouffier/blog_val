@@ -1,22 +1,13 @@
-<% if current_user.present? %>
-  <%= render "admin_section" %>
-<% end %>
-<div class="w3-row">
-  <div class="w3-col l3 m1">
-    <p></p>
-  </div>
-  <div class="w3-col l6 m10">
-    <%= render 'nav' %>
-    <%= render 'category' %>
-    <h2 class="w3-container">Dans cette categorie</h2>
-    <section class="w3-row">
-		<% @category.recipes.published.each do |recipe| %>
-			<%= render "recipe_summary_card", recipe: recipe %>
-		<% end %>
-	</section>
-  </div>
-
-  <div class="w3-col l3 m1">
-    <p></p>
-  </div>
+<div class="w3-content ">
+  <%= render 'nav' %>
+  <%= render 'category' %>
+  <h2 class="w3-container">Dans cette categorie</h2>
+  <section class="w3-row">
+  	<% @category.recipes.published.each do |recipe| %>
+  		<%= render "recipe_summary_card", recipe: recipe %>
+  	<% end %>
+  </section>
+  <% if current_user.present? %>
+	<%= render "admin_section" %>
+  <% end %>
 </div>
