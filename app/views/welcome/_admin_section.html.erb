@@ -1,8 +1,10 @@
 <%= render "admin_panel" do %>
+	<% unless @unpublished_recipes.empty? %>
 	<strong>Recettes non-publiée :</strong>
 	<ul>
 		<% @unpublished_recipes.each do |recipe| %>
 		<li><%= link_to recipe.title, recipe %></li>
-	<% end %>
+		<% end %>
 	</ul>
+	<% end %>
 <% end %>
