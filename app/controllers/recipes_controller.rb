@@ -15,6 +15,9 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    unless (@recipe.public?  or current_user.present?)
+      redirect_to root_path
+    end
   end
 
   private

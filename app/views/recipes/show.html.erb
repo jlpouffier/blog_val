@@ -7,11 +7,7 @@
   </div>
   <div class="w3-col l6 m10">
     <%= render 'nav' %>
-    <% if @recipe.public? or (current_user.present?) %>
-      <%= render 'recipe' %>
-    <% else %>
-      <%= render 'not_authorized' %>
-    <% end %>
+    <%= render 'recipe' %>
   <%= link_to 'Back', recipes_path %>
   </div>
   <div class="w3-col l3 m1">
