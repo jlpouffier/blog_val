@@ -1,0 +1,13 @@
+<nav class="w3-container">
+  <%= link_to root_path do%><i class="fas fa-home"></i><% end %>
+  >
+  <%= link_to "Recettes", recipes_path %>
+  >
+  <% @recipe.categories.each do |category| %>
+  	<%= link_to category.title, category %>
+  	<% if category != @recipe.categories.last %>
+	    x
+	  <% end %>
+  <% end %>
+  > 
+</nav>

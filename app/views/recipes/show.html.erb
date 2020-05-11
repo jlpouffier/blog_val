@@ -6,13 +6,7 @@
     <p></p>
   </div>
   <div class="w3-col l6 m10">
-    <nav>
-      <%= link_to root_path do%><i class="fas fa-home"></i><% end %>
-      >
-      <%= link_to "Recettes", recipes_path %>
-      >
-      <%= @recipe.title %>
-    </nav>
+    <%= render 'nav' %>
     <% if @recipe.public? or (current_user.present?) %>
       <%= render 'recipe' %>
     <% else %>
