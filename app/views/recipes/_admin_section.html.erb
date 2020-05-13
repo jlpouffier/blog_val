@@ -10,5 +10,10 @@
 		<%= link_to "OUVRIR DANS L'ADMIN", rails_admin.show_path(model_name: 'recipe', id: @recipe.id), class: "w3-bar-item w3-button w3-mobile" %>	
 		<%= link_to "MODIFIER", rails_admin.edit_path(model_name: 'recipe', id: @recipe.id), class: "w3-bar-item w3-button w3-mobile" %>	
 		<%= link_to "SUPPRIMER", rails_admin.delete_path(model_name: 'recipe', id: @recipe.id), class: "w3-bar-item w3-button w3-mobile" %>	
+		<% if @recipe.public? %>
+			<%= link_to "RENDRE PRIVÉE", unpublish_recipe_path(@recipe), method: :post, class: "w3-bar-item w3-button w3-mobile" %>	
+		<% else %>
+			<%= link_to "RENDRE PUBLIQUE", publish_recipe_path(@recipe), method: :post, class: "w3-bar-item w3-button w3-mobile" %>	
+		<% end %>
 	</div>
 <% end %>

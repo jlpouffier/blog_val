@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:show, :publish, :unpublish]
+  before_action :authorize_access, only: [:show]
+  before_action :authorize_action,only: [:publish, :unpublish]
 
   # GET /recipes
   # GET /recipes.json
@@ -15,14 +17,38 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-    unless (@recipe.public?  or current_user.present?)
-      redirect_to root_path
-    end
+  end
+
+  def publish
+    @recipe.public = true
+    @recipe.created_at = Time.now  
+    @recipe.save
+    redirect_to @recipe
+  end
+
+  def unpublish
+    @recipe.public = false
+    @recipe.save
+    redirect_to @recipe
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipe
       @recipe = Recipe.find(params[:id])
+    end
+
+    def authorize_access
+      unless (@recipe.public?  or current_user.present?)
+        # TO DO : A real unauthorized page
+        redirect_to root_path
+      end
+    end
+
+    def authorize_action
+      unless current_user.present?
+        # TO DO : A real unauthorized page
+        redirect_to root_path
+      end
     end
 end
