@@ -9,7 +9,9 @@
 	<h2 class="w3-container">Explorer les recettes par categories</h2>
 	<section class="w3-row">
 		<% @categories.each do |category| %>
-			<%= render "category_summary_card", category: category %>
+			<article class="w3-col l3 m4 s6">
+				<%= render "category_summary_card", category: category %>
+			</article>
 		<% end %>
 	</section>
 
@@ -24,7 +26,9 @@
 
 	<section class="w3-row">
 	<% @recipes.published.each do |recipe| %>
-	  <%= render "recipe_summary_card", recipe: recipe %>
+		<article class="w3-col l4">
+	  		<%= render "recipe_summary_card", recipe: recipe %>
+	  	</article>
 	<% end %>
 	</section>
 </div>

@@ -1,13 +1,10 @@
-<article class="w3-col l3 m4 s6">
-	<a href="<%= category_path(category) %>">
-		<div class="w3-margin w3-display-container w3-hover-opacity ">
-			<%= image_tag category.photo.variant(resize_to_fill: [750,750]), class: "w3-image w3-circle w3-card" %>
-		</div>
-	</a>
-	<header class="w3-margin w3-center">
-		<strong><%= category.title.upcase %></strong>
-		<br>
-		<i class="fas fa-list-alt"></i> <%= category.recipes.published.count %>
-	</header>
-
-</article>
+<a href="<%= category_path(category) %>">
+	<div class="w3-margin w3-display-container w3-hover-opacity ">
+		<%= image_tag category.photo.variant(resize_to_fill: [750,750]), class: "w3-image w3-circle w3-card" %>
+	</div>
+</a>
+<header class="w3-margin w3-center">
+	<strong><%= category.title.upcase %></strong>
+	<br>
+	<i class="fas fa-list-alt"></i> <%= category.recipes.published.count %>
+</header>

@@ -4,7 +4,9 @@
   <h2 class="w3-container">Dans cette categorie</h2>
   <section class="w3-row">
   	<% @category.recipes.published.each do |recipe| %>
-  		<%= render "recipe_summary_card", recipe: recipe %>
+      <article class="w3-col l4">
+  		  <%= render "recipe_summary_card", recipe: recipe %>
+      </article>
   	<% end %>
   </section>
   <% if current_user.present? %>

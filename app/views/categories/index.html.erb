@@ -8,7 +8,9 @@
 <h2 class="w3-container">Toutes les cateogries</h2>
 <section class="w3-row">
   <% @categories.each do |category| %>
-    <%= render "category_summary_card", category: category %>
+  	<article class="w3-col l3 m4 s6">
+   		<%= render "category_summary_card", category: category %>
+   	</article>
   <% end %>
 </section>
 </div>

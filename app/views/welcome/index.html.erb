@@ -4,7 +4,9 @@
 	<h2 class="w3-container">Dernieres recettes</h2>
 	<section class="w3-row">
 	<% @latest_published_recipes.each do |recipe| %>
-		<%= render "recipe_summary_card", recipe: recipe %>
+		<article class="w3-col l4">
+			<%= render "recipe_summary_card", recipe: recipe %>
+		</article>
 	<% end %>
 	</section>
 

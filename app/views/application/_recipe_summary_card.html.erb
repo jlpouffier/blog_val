@@ -1,15 +1,13 @@
-<article class="w3-col l4">
-	<a href="<%= recipe_path(recipe) %>">
-		<div class="w3-margin w3-display-container w3-hover-opacity ">
-			<%= image_tag recipe.photo.variant(resize_to_fill: [1000,750]), class: "w3-image w3-round-xlarge w3-card" %>
-			<header class="w3-display-bottomleft w3-margin w3-text-white">
-				<strong><%= recipe.title.upcase %></strong>
-				<br>
-				<i>
-				<%= recipe.complexity_human %>|
-				<%= recipe.global_time_human %>
-				</i>
-			</header>
-		</div>
-	</a>
-</article>
+<a href="<%= recipe_path(recipe) %>">
+	<div class="w3-margin w3-display-container w3-hover-opacity ">
+		<%= image_tag recipe.photo.variant(resize_to_fill: [1000,750]), class: "w3-image w3-round-xlarge w3-card" %>
+		<header class="w3-display-bottomleft w3-margin w3-text-white">
+			<strong><%= recipe.title.upcase %></strong>
+			<br>
+			<i>
+			<%= recipe.complexity_human %>|
+			<%= recipe.global_time_human %>
+			</i>
+		</header>
+	</div>
+</a>
