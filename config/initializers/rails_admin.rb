@@ -37,6 +37,7 @@ RailsAdmin.config do |config|
       field :instructions
       field :ingredients
       field :tools
+      field :tips
       field :complexity
       field :preparation_time
       field :waiting_time

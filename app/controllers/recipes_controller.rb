@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :publish, :unpublish]
   before_action :authorize_access, only: [:show]
-  before_action :authorize_action,only: [:publish, :unpublish]
+  before_action :authorize_action, only: [:publish, :unpublish]
 
   # GET /recipes
   # GET /recipes.json

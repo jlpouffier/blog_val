@@ -21,3 +21,8 @@
     <%= render "instructions" %>
   </div>
 </section>
+<% if @recipe.tips? %>
+  <section class="w3-panel">
+    <%= render "tips" %>
+  </section>
+<% end %>
