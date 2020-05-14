@@ -1,8 +1,14 @@
 <%= render "admin_panel" do %>
 	<strong>Categorie: <%= @category.title %></strong>
 	<div class="w3-bar">
-		<%= link_to "OUVRIR DANS L'ADMIN", rails_admin.show_path(model_name: 'category', id: @category.id), class: "w3-bar-item w3-button w3-mobile" %>	
-		<%= link_to "MODIFIER", rails_admin.edit_path(model_name: 'category', id: @category.id), class: "w3-bar-item w3-button w3-mobile" %>	
-		<%= link_to "SUPPRIMER", rails_admin.delete_path(model_name: 'category', id: @category.id), class: "w3-bar-item w3-button w3-mobile" %>	
+		<%= link_to rails_admin.show_path(model_name: 'category', id: @category.id), class: "w3-bar-item w3-button w3-mobile" do %>
+			<i class="fas fa-user-lock"></i> Ouvrir dans l'admin
+		<% end %>	
+		<%= link_to rails_admin.edit_path(model_name: 'category', id: @category.id), class: "w3-bar-item w3-button w3-mobile" do %>
+			<i class="fas fa-edit"></i> Modifier
+		<% end %>	
+		<%= link_to rails_admin.delete_path(model_name: 'category', id: @category.id), class: "w3-bar-item w3-button w3-mobile" do %>
+			<i class="fas fa-trash"></i> Supprimer
+		<% end %>	
 	</div>
 <% end %>

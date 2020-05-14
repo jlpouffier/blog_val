@@ -7,4 +7,18 @@
 		<% end %>
 	</ul>
 	<% end %>
+	<div class="w3-bar">
+		<%= link_to rails_admin_path, class: "w3-bar-item w3-button w3-mobile" do %>
+			<i class="fas fa-user-lock"></i> Ouvrir l'admin
+		<% end %>	
+		<%= link_to rails_admin.new_path(model_name: 'recipe'), class: "w3-bar-item w3-button w3-mobile" do %>
+			<i class="fas fa-apple-alt"></i> Nouvelle recette
+		<% end %>	
+		<%= link_to rails_admin.new_path(model_name: 'category'), class: "w3-bar-item w3-button w3-mobile" do %>
+			<i class="fas fa-folder"></i> Nouvelle categorie
+		<% end %>	
+		<%= link_to  destroy_user_session_path, :method => :delete , class: "w3-bar-item w3-button w3-mobile" do %>
+			<i class="fas fa-sign-out-alt"></i> Se déconnecter
+		<% end %>		
+	</div>
 <% end %>
