@@ -40,15 +40,13 @@ class RecipesController < ApplicationController
 
     def authorize_access
       unless (@recipe.public?  or current_user.present?)
-        # TO DO : A real unauthorized page
-        redirect_to root_path
+        render file: "#{Rails.root}/public/403.html", layout: false, status: 403
       end
     end
 
     def authorize_action
       unless current_user.present?
-        # TO DO : A real unauthorized page
-        redirect_to root_path
+        render file: "#{Rails.root}/public/403.html", layout: false, status: 403
       end
     end
 end
