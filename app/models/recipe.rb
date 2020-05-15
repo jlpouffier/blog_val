@@ -19,7 +19,7 @@ class Recipe < ApplicationRecord
 	scope :unpublished, -> { where(public: false) }
 
 	def self.search(search_terms)
-		where("title LIKE ?", "%#{search_terms}%")
+		where("title ILIKE ?", "%#{search_terms}%")
 	end
 
 	def self.random
