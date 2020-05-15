@@ -22,6 +22,10 @@ class Recipe < ApplicationRecord
 		where("title LIKE ?", "%#{search_terms}%")
 	end
 
+	def self.random
+		offset(rand(count))
+    end
+
 	def preparation_time_human
 		convert_time_to_human(self.preparation_time)
 	end

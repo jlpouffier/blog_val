@@ -3,6 +3,6 @@ class WelcomeController < ApplicationController
   	@latest_published_recipes = Recipe.published.order(created_at: :desc).limit(3)
   	@unpublished_recipes = Recipe.unpublished
   	@most_popular_categories = Category.all.order(recipes_count: :desc).limit(4)
-  	@random_recipes = Recipe
+  	@random_recipe = Recipe.random.first
   end
 end

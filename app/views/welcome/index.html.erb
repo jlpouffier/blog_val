@@ -25,8 +25,13 @@
 		<%= render "button_link", link_path: categories_path, link_text: "Toutes les categories" %>
 	</div>
 
-	<h2 class="w3-container">Je manque d'inspiration !</h2>
-	<p class="w3-container">Et hop 3 recettes au pif</p>
+	
+	<p class="w3-container"><strong>Je manque d'inspiration ...</strong> Et hop une recettes au pif !</p>
+	<section class="w3-row">
+		<article class="w3-col l4">
+			<%= render "recipe_summary_card", recipe: @random_recipe %>
+		</article>
+	</section>
 	
 
 	<% if current_user.present? %>
