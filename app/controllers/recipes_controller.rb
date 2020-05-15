@@ -4,7 +4,6 @@ class RecipesController < ApplicationController
   before_action :authorize_action, only: [:publish, :unpublish]
 
   # GET /recipes
-  # GET /recipes.json
   def index
     if params[:search]
       @recipes = Recipe.search(params[:search]).order(:title)
@@ -15,10 +14,10 @@ class RecipesController < ApplicationController
   end
 
   # GET /recipes/1
-  # GET /recipes/1.json
   def show
   end
 
+  # POST /recipes/id/publish
   def publish
     @recipe.public = true
     @recipe.created_at = Time.now  
@@ -26,6 +25,7 @@ class RecipesController < ApplicationController
     redirect_to @recipe
   end
 
+  # POST /recipes/id/unpublish
   def unpublish
     @recipe.public = false
     @recipe.save
@@ -33,7 +33,6 @@ class RecipesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_recipe
       @recipe = Recipe.find(params[:id])
     end
