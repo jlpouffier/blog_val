@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
-	has_and_belongs_to_many :recipes
+	has_many :categories_recipe
+	has_many :recipes, through: :categories_recipe
+
 	has_one_attached :photo
 end
