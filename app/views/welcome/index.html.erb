@@ -12,6 +12,8 @@
 		<%= render "button_link", link_path: recipes_path, link_text: "Toutes les recettes" %>
 	</div>
 
+
+
 	<h2 class="w3-container">Explorer nos categories les plus populaires</h2>
 	<section class="w3-row">
 		<% @most_popular_categories.each do |category| %>
@@ -25,7 +27,7 @@
 	</div>
 
 	
-	<p class="w3-container"><strong>Je manque d'inspiration ...</strong> Et hop une recettes au pif !</p>
+	<h3 class="w3-container">En manque d'inspiration ?</h3>
 	<section class="w3-row">
 		<article class="w3-col l4 m6">
 			<%= render "recipe_summary_card", recipe: @random_recipe %>
