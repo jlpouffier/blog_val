@@ -27,6 +27,8 @@ gem "devise"
 
 gem 'redcarpet'
 
+gem "google-cloud-storage", "~> 1.11", require: false
+
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
