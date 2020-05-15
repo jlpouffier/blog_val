@@ -7,11 +7,11 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     if params[:search]
-      @recipes = Recipe.search(params[:search]).order("created_at DESC")
+      @recipes = Recipe.search(params[:search]).order(:title)
     else
-      @recipes = Recipe.all.order("created_at DESC")
+      @recipes = Recipe.all.order(:title)
     end
-    @categories = Category.all.order("recipes_count DESC")
+    @most_popular_categories = Category.all.order(recipes_count: :desc).limit(4)
   end
 
   # GET /recipes/1

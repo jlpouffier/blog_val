@@ -3,7 +3,7 @@
   <%= render 'category' %>
   <h2 class="w3-container">Dans cette categorie</h2>
   <section class="w3-row">
-  	<% @category.recipes.published.each do |recipe| %>
+  	<% @recipes.each do |recipe| %>
       <article class="w3-col l4">
   		  <%= render "recipe_summary_card", recipe: recipe %>
       </article>

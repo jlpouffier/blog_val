@@ -4,12 +4,13 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all.order("recipes_count DESC")
+    @categories = Category.all.order(:title)
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @recipes = @category.recipes.published.order(:title)
   end
 
   private

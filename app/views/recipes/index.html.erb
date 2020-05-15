@@ -6,14 +6,17 @@
 	  > Recettes
 	</nav>
 
-	<h2 class="w3-container">Explorer les recettes par categories</h2>
+	<h2 class="w3-container">Explorer nos categories les plus populaires</h2>
 	<section class="w3-row">
-		<% @categories.each do |category| %>
+		<% @most_popular_categories.each do |category| %>
 			<article class="w3-col l3 m4 s6">
 				<%= render "category_summary_card", category: category %>
 			</article>
 		<% end %>
 	</section>
+	<div class="w3-container">
+		<%= render "button_link", link_path: categories_path, link_text: "Toutes les categories" %>
+	</div>
 
 
 	<h2 class="w3-container">Toutes les recettes</h2>
