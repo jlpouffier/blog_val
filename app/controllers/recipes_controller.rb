@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all.order("created_at DESC")
     end
-    @categories = Category.all.order("created_at DESC")
+    @categories = Category.all.order("recipes_count DESC")
   end
 
   # GET /recipes/1

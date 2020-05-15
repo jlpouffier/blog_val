@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all.order("created_at DESC")
+    @categories = Category.all.order("recipes_count DESC")
   end
 
   # GET /categories/1
