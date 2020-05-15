@@ -29,7 +29,7 @@
 
 	<section class="w3-row">
 	<% @recipes.published.each do |recipe| %>
-		<article class="w3-col l4">
+		<article class="w3-col l4 m6">
 	  		<%= render "recipe_summary_card", recipe: recipe %>
 	  	</article>
 	<% end %>

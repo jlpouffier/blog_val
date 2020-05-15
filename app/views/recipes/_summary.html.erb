@@ -4,18 +4,18 @@
 	<% @recipe.categories.each do |category| %>
 		<%= link_to category.title, category %>
 	    <% if category != @recipe.categories.last %>
-	      |
+	      x
 	    <% end %>
 	<% end %>
 	</i>
 </section>
 <section class="recipe-summary">
 		<i class="fas fa-bolt"></i> <strong>Difficulté</strong> | <%= @recipe.complexity_human %><br>
-		<% if @recipe.preparation_time? %><i class="fas fa-play"></i> 
-			<strong>Preparation</strong> | <%= @recipe.preparation_time_human %><br>
+		<% if @recipe.preparation_time? %>
+			<i class="fas fa-play"></i> <strong>Preparation</strong> | <%= @recipe.preparation_time_human %><br>
 		<% end %>
-		<% if @recipe.waiting_time? %><i class="fas fa-pause"></i> 
-			<strong>Repos</strong> | <%= @recipe.waiting_time_human %><br>
+		<% if @recipe.waiting_time? %>
+			<i class="fas fa-pause"></i> <strong>Repos</strong> | <%= @recipe.waiting_time_human %><br>
 		<% end %>
 		<% if @recipe.baking_time? %>
 			<i class="fas fa-fire"></i> <strong>Cuisson</strong> | <%= @recipe.baking_time_human %><br>
