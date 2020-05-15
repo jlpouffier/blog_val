@@ -15,8 +15,12 @@
  */
 
 @font-face {
-  font-family: 'recipe-title';
+  font-family: 'main-title';
   src: url(/assets/IndieFlower-Regular.ttf) format("truetype");
+}
+
+.main-title {
+  font-family: 'main-title';
 }
 
 a:hover{
