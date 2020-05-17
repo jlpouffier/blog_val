@@ -1,10 +1,10 @@
 <section class="w3-row w3-section">
-  <article class="w3-col w3-padding l6">
+  <article class="w3-col w3-padding l6 m6">
     <h1 class="main-title"><%= @recipe.title.upcase %></h1>
     <%= render "summary" %>
   </article>
-  <div class="w3-container w3-col l6">
-    <%= image_tag @recipe.photo.variant(resize_to_fill: [1000,750]), class: "w3-image w3-round w3-card" %>
+  <div class="w3-container w3-col l6 m6">
+    <%= image_tag @recipe.photo.variant(resize_to_fill: [600,450]), class: "w3-image w3-round w3-card" %>
   </div>
 </section>
 <section class="recipe-story w3-panel">
