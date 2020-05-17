@@ -5,10 +5,10 @@ class RecipesController < ApplicationController
 
   # GET /recipes
   def index
-    if params[:search]
-      @recipes = Recipe.search(params[:search]).order(:title)
+    if params[:search]&& !params[:search].empty?
+      @recipes = Recipe.published.search_by_title(params[:search]).order(:title)
     else
-      @recipes = Recipe.all.order(:title)
+      @recipes = Recipe.published.order(:title)
     end
     @most_popular_categories = Category.all.order(recipes_count: :desc).limit(4)
   end

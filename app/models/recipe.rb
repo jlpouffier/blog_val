@@ -1,4 +1,13 @@
 class Recipe < ApplicationRecord
+	include PgSearch::Model
+	pg_search_scope :search_by_title, 
+					against: :title,
+					using: { tsearch: { dictionary: 'french' } }
+
+	has_many :categories_recipe, dependent: :destroy
+	has_many :categories, through: :categories_recipe
+	has_one_attached :photo
+
 	validates :title, presence: true
 	validates :photo, presence: true
 	validates :story, presence: true
@@ -6,21 +15,11 @@ class Recipe < ApplicationRecord
 	validates :complexity, presence: true
 	validates :instructions, presence: true
 	validates :preparation_time, presence: true
-
 	validates :preparation_time, numericality: { only_integer: true, :greater_than_or_equal_to => 1 }
 	validates :complexity, numericality: { only_integer: true, :greater_than_or_equal_to => 1, :less_than_or_equal_to => 3 }
 
-	has_many :categories_recipe, dependent: :destroy
-	has_many :categories, through: :categories_recipe
-	
-	has_one_attached :photo
-
 	scope :published, -> { where(public: true) }
 	scope :unpublished, -> { where(public: false) }
-
-	def self.search(search_terms)
-		where("title ILIKE ?", "%#{search_terms}%")
-	end
 
 	def self.random
 		offset(rand(count))
