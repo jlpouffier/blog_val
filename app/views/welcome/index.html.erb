@@ -1,6 +1,6 @@
 <%= render 'hero_image' %>
 <div class="w3-content ">
-	<h2 class="w3-container">Dernieres recettes</h2>
+	<h2 class="main-title w3-container">DERNIERES RECETTES</h2>
 	<section class="w3-row">
 	<% @latest_published_recipes.each do |recipe| %>
 		<article class="w3-col l4 m6">
@@ -14,7 +14,7 @@
 
 
 
-	<h2 class="w3-container">Explorer nos categories les plus populaires</h2>
+	<h2 class="main-title  w3-container">CATEGORIES POPULAIRES</h2>
 	<section class="w3-row">
 		<% @most_popular_categories.each do |category| %>
 			<article class="w3-col l3 m4 s6">
@@ -27,7 +27,7 @@
 	</div>
 
 	
-	<h3 class="w3-container">En manque d'inspiration ?</h3>
+	<h3 class="main-title  w3-container">EN MANQUE D'INSPIRATION ?</h3>
 	<section class="w3-row">
 		<article class="w3-col l4 m6">
 			<%= render "recipe_summary_card", recipe: @random_recipe %>

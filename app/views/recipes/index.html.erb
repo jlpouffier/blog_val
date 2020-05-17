@@ -5,7 +5,7 @@
 	  > Recettes
 	</nav>
 
-	<h2 class="w3-container">Explorer nos categories les plus populaires</h2>
+	<h2 class="main-title  w3-container">CATEGORIES POPULAIRES</h2>
 	<section class="w3-row">
 		<% @most_popular_categories.each do |category| %>
 			<article class="w3-col l3 m4 s6">
@@ -18,10 +18,10 @@
 	</div>
 
 
-	<h2 class="w3-container">Toutes les recettes</h2>
+	<h2 class="main-title w3-container">TOUTES LES RECETTES</h2>
 	<div class="w3-margin">
 	  <%= form_tag(recipes_path, :method => "get") do %>
-	  <%= text_field_tag :search, params[:search], placeholder: "Rechercher parmi toutes les recettes", class: "w3-input w3-border w3-round-xxlarge" %>
+	  <%= text_field_tag :search, params[:search], placeholder: "Rechercher parmi toutes les recettes", class: "w3-input w3-border  w3-round-xxlarge" %>
 	  <% end %>
 	</div>
 	<section class="w3-row">
