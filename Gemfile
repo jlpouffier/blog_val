@@ -28,6 +28,8 @@ gem "devise"
 
 gem 'redcarpet'
 
+gem 'friendly_id', '~> 5.2.4'
+
 gem "google-cloud-storage", "~> 1.11", require: false
 
 # Use Active Storage variant
