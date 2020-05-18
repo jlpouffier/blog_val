@@ -11,10 +11,18 @@ class RecipesController < ApplicationController
       @recipes = Recipe.published.order(:title)
     end
     @most_popular_categories = Category.all.order(recipes_count: :desc).limit(4)
+
+    set_meta_tags title: 'Recettes',
+                  description: 'Toutes les recettes',
+                  keywords: @recipes.limit(20).map(&:title).join(', ')
   end
 
   # GET /recipes/1
   def show
+    @categories = @recipe.categories.all.order(:title)
+    set_meta_tags title: 'Recettes' + @recipe.title,
+                  description: helpers.no_markdown(@recipe.story)[0..160],
+                  keywords: @categories.limit(20).map(&:title).join(', ')
   end
 
   # POST /recipes/id/publish

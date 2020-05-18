@@ -1,9 +1,9 @@
 <section class="w3-margin-bottom recipe-summary">
 	<i>
 	<%= @recipe.created_at.to_time.strftime('%d/%m/%Y') %> | 
-	<% @recipe.categories.each do |category| %>
+	<% @categories.each do |category| %>
 		<%= link_to category.title, category %>
-	    <% if category != @recipe.categories.last %>
+	    <% if category != @categories.last %>
 	      x
 	    <% end %>
 	<% end %>

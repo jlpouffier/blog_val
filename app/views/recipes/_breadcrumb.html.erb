@@ -3,9 +3,9 @@
   >
   <%= link_to "Recettes", recipes_path %>
   >
-  <% @recipe.categories.each do |category| %>
+  <% @categories.each do |category| %>
   	<%= link_to category.title, category %>
-  	<% if category != @recipe.categories.last %>
+  	<% if category != @categories.last %>
 	    x
 	  <% end %>
   <% end %>
