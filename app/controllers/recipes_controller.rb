@@ -11,10 +11,11 @@ class RecipesController < ApplicationController
       @recipes = Recipe.published.search_by_title(params[:search]).order(:title).page params[:page]
     else
       @recipes = Recipe.published.order(:title).page params[:page]
+      # Get the 4 most popular categories (by recipes count)
+      @most_popular_categories = Category.all.order(recipes_count: :desc).limit(4)
     end
 
-    # Get the 4 most popular categories (by recipes count)
-    @most_popular_categories = Category.all.order(recipes_count: :desc).limit(4)
+
 
     # Set the meta tags of the page. Descirption and keywords include to first 20 recipes
     # TODO: Order the keywords and description by popularity    
