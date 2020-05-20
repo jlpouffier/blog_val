@@ -1,4 +1,4 @@
-<section class="w3-margin-bottom recipe-summary">
+<div class="w3-margin-bottom recipe-summary">
 	<i>
 	<%= @recipe.created_at.to_time.strftime('%d/%m/%Y') %> | 
 	<% @categories.each do |category| %>
@@ -8,8 +8,8 @@
 	    <% end %>
 	<% end %>
 	</i>
-</section>
-<section class="recipe-summary">
+</div>
+<div class="recipe-summary">
 		<i class="fas fa-bolt"></i> <strong>Difficulté</strong> | <%= @recipe.complexity_human %><br>
 		<% if @recipe.preparation_time? %>
 			<i class="fas fa-play"></i> <strong>Preparation</strong> | <%= @recipe.preparation_time_human %><br>
@@ -21,4 +21,4 @@
 			<i class="fas fa-fire"></i> <strong>Cuisson</strong> | <%= @recipe.baking_time_human %><br>
 		<% end %>
 	</p>
-</section>
+</div>

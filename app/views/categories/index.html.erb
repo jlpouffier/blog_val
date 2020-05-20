@@ -1,16 +1,16 @@
 <%= render 'hero_image' %>
-<div class="w3-content ">
-<nav class="w3-margin">
-  <%= link_to root_path do%><i class="fas fa-home"></i><% end %>
-  > Catégories
-</nav>
-<h2 class="main-title w3-container">TOUTES LES CATEOGRIES</h2>
-<section class="w3-row">
-  <% @categories.each do |category| %>
-  	<article class="w3-col l3 m4 s6">
-   		<%= render "category_summary_card", category: category %>
-   	</article>
-  <% end %>
-</section>
-<%= paginate @categories %>
-</div>
+<main class="w3-content">
+	<nav class="w3-margin">
+	  <%= link_to root_path do%><i class="fas fa-home"></i><% end %>
+	  > Catégories
+	</nav>
+	<h2 class="main-title w3-container">TOUTES LES CATEOGRIES</h2>
+	<section class="w3-row">
+	  <% @categories.each do |category| %>
+	  	<article class="w3-col l3 m4 s6">
+	   		<%= render "category_summary_card", category: category %>
+	   	</article>
+	  <% end %>
+	</section>
+	<%= paginate @categories %>
+</main>
