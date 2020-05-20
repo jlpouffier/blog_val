@@ -46,6 +46,23 @@ body, html {
 	  left: 50%;
 	  transform: translate(-50%, -50%);
 	  color: white;
+      h1, p {
+        font-family: 'main-title';
+      }
+      h1 {
+        font-size: 200%
+      }
+      p {
+        font-size: 150%
+      }
 	}
+}
+
+.hover-card {
+  transition: transform .25s; /* Animation */
+  &:hover {
+    transform: scale(1.02); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
 }
 
