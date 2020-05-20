@@ -6,6 +6,9 @@ class Category < ApplicationRecord
 	# Pagination (3 lines of 4)
 	paginates_per 12
 
+	# Hit tracker
+	acts_as_punchable
+
 	# has many though relation with recipes
 	has_many :categories_recipe, dependent: :destroy
 	has_many :recipes, through: :categories_recipe

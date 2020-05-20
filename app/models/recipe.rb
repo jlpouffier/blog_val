@@ -12,6 +12,9 @@ class Recipe < ApplicationRecord
 					against: :title,
 					using: { tsearch: { dictionary: 'french' } }
 
+	# Hit tracker
+	acts_as_punchable
+
 	# has many though relation with category
 	has_many :categories_recipe, dependent: :destroy
 	has_many :categories, through: :categories_recipe

@@ -18,6 +18,8 @@ class CategoriesController < ApplicationController
     # Get all related recipes for that cateogy, ordered by title
     @recipes = @category.recipes.published.order(:title).page params[:page]
 
+    @category.punch(request)
+
     # Set the meta tags of the page. 
     # Descirption is the stripped down version of the category desciprition (The first 160 char)
     # keywords are the related recipes.

@@ -33,6 +33,8 @@ gem 'meta-tags'
 
 gem 'kaminari'
 
+gem "punching_bag"
+
 gem "google-cloud-storage", "~> 1.11", require: false
 
 # Use Active Storage variant
