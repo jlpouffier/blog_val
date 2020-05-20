@@ -1,12 +1,18 @@
 <%= render 'hero_image' %>
 <div class="w3-content ">
+
+	<div class="w3-margin">
+		<%= render 'recipes_search' %>
+	</div>
+	
+
 	<h2 class="main-title w3-container">DERNIERES RECETTES</h2>
 	<section class="w3-row">
-	<% @latest_published_recipes.each do |recipe| %>
-		<article class="w3-col l4 m6">
-			<%= render "recipe_summary_card", recipe: recipe %>
-		</article>
-	<% end %>
+		<% @latest_published_recipes.each do |recipe| %>
+			<article class="w3-col l4 m6">
+				<%= render "recipe_summary_card", recipe: recipe %>
+			</article>
+		<% end %>
 	</section>
 	<div class="w3-container">
 		<%= render "button_link", link_path: recipes_path, link_text: "Toutes les recettes" %>
