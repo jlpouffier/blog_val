@@ -1,6 +1,6 @@
 <a href="<%= recipe_path(recipe) %>">
 	<div class="w3-margin w3-display-container w3-hover-opacity ">
-		<%= image_tag recipe.photo.variant(resize_to_fill: [600,450]), class: "w3-image w3-round-xlarge w3-card" %>
+		<%= image_tag recipe.photo.variant(resize_to_fill: [600,450]), class: "w3-image w3-round-xlarge w3-card", alt: recipe.title %>
 		<header class="w3-display-bottomleft w3-margin w3-text-white">
 			<strong><%= recipe.title.upcase %></strong>
 			<br>

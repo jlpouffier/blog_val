@@ -4,7 +4,7 @@
     <%= render "summary" %>
   </article>
   <div class="w3-container w3-col l6 m6">
-    <%= image_tag @recipe.photo.variant(resize_to_fill: [600,450]), class: "w3-image w3-round-xlarge w3-card" %>
+    <%= image_tag @recipe.photo.variant(resize_to_fill: [600,450]), class: "w3-image w3-round-xlarge w3-card", alt: @recipe.title %>
   </div>
 </section>
 <section class="recipe-story w3-panel">
