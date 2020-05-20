@@ -1,0 +1,17 @@
+<%# Link showing page number
+  - available local variables
+    page:          a page object for "this" page
+    url:           url to this page
+    current_page:  a page object for the currently displayed page
+    total_pages:   total number of pages
+    per_page:      number of items to fetch per page
+    remote:        data-remote
+-%>
+<% if page.current? %>
+	<span class="w3-button w3-disabled w3-green w3-round-large"><%=page%></span>
+<% else %>
+	<%= link_to url, class: "w3-button w3-dark-gray w3-hover-green w3-round-large" do %>
+		<%= page %>
+	<% end %>
+<% end %>
+

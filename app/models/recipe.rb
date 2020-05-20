@@ -3,9 +3,9 @@ class Recipe < ApplicationRecord
 	extend FriendlyId
   	friendly_id :title, use: :slugged
 
-	# pagination
-  	paginates_per 3
-
+	# pagination (4 lines of 3)
+  	paginates_per 12
+  	
   	# full text postgress search
 	include PgSearch::Model
 	pg_search_scope :search_by_title, 

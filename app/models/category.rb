@@ -3,8 +3,8 @@ class Category < ApplicationRecord
 	extend FriendlyId
 	friendly_id :title, use: :slugged
 
-	# Pagination 
-	paginates_per 4
+	# Pagination (3 lines of 4)
+	paginates_per 12
 
 	# has many though relation with recipes
 	has_many :categories_recipe, dependent: :destroy
