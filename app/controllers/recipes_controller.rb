@@ -8,9 +8,9 @@ class RecipesController < ApplicationController
     # If Search paramater, then @recipes will be set to the list of matching public recipes, order by title.
     # Else @recipes will be set to the list of all public recipes, order by title.
     if params[:search]&& !params[:search].empty?
-      @recipes = Recipe.published.search_by_title(params[:search]).order(:title)
+      @recipes = Recipe.published.search_by_title(params[:search]).order(:title).page params[:page]
     else
-      @recipes = Recipe.published.order(:title)
+      @recipes = Recipe.published.order(:title).page params[:page]
     end
 
     # Get the 4 most popular categories (by recipes count)

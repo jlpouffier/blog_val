@@ -9,6 +9,7 @@
       </article>
   	<% end %>
   </section>
+  <%= paginate @recipes %>
   <% if current_user.present? %>
 	<%= render "admin_section" %>
   <% end %>

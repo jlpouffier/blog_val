@@ -2,6 +2,8 @@ class Recipe < ApplicationRecord
 	extend FriendlyId
   	friendly_id :title, use: :slugged
 
+  	paginates_per 3
+
 	include PgSearch::Model
 	pg_search_scope :search_by_title, 
 					against: :title,
