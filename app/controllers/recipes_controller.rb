@@ -19,8 +19,8 @@ class RecipesController < ApplicationController
     # Set the meta tags of the page. Descirption and keywords include to first 20 recipes
     # TODO: Order the keywords and description by popularity    
     set_meta_tags title: 'Recettes',
-                  description: 'Toutes les recettes: ' + @recipes.limit(20).map(&:title).join(', ') + ' ...',
-                  keywords: @recipes.limit(20).map(&:title).join(', ')
+                  description: 'Toutes les recettes: ' + @recipes.map(&:title).join(', ') + ' ...',
+                  keywords: @recipes.map(&:title).join(', ')
   end
 
   # GET /recipes/1

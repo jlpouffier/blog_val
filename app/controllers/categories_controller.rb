@@ -6,11 +6,11 @@ class CategoriesController < ApplicationController
     # Get all categiries orders by title
     @categories = Category.all.order(:title).page params[:page]
 
-    # Set the meta tags of the page. Descirption and keywords include to first 20 cateogries
+    # Set the meta tags of the page. Descirption and keywords include the cateogries
     # TODO: Order the keywords and description by popularity
     set_meta_tags title: 'Catégories',
-                  description: 'Toutes les catérories: ' + @categories.limit(20).map(&:title).join(', ') + ' ...',
-                  keywords: @categories.limit(20).map(&:title).join(', ')
+                  description: 'Toutes les catérories: ' + @categories.map(&:title).join(', ') + ' ...',
+                  keywords: @categories.map(&:title).join(', ')
   end
 
   # GET /categories/1
@@ -20,11 +20,11 @@ class CategoriesController < ApplicationController
 
     # Set the meta tags of the page. 
     # Descirption is the stripped down version of the category desciprition (The first 160 char)
-    # keywords are the first 20 related recipes.
+    # keywords are the related recipes.
     # TODO: Order the keywords by popularity   
     set_meta_tags title: 'Catégorie: ' + @category.title,
                   description: helpers.no_markdown(@category.description)[0..160],
-                  keywords: @recipes.limit(20).map(&:title).join(', ')
+                  keywords: @recipes.map(&:title).join(', ')
   end
 
   private
