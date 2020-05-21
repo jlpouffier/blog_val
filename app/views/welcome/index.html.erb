@@ -5,7 +5,6 @@
 		<%= render 'recipes_search' %>
 	</div>
 	
-
 	<h2 class="main-title w3-container">DERNIERES RECETTES</h2>
 	<section class="w3-row">
 		<% @latest_published_recipes.each do |recipe| %>
@@ -17,8 +16,6 @@
 	<div class="w3-container">
 		<%= render "button_link", link_path: recipes_path, link_text: "Toutes les recettes" %>
 	</div>
-
-
 
 	<h2 class="main-title  w3-container">CATEGORIES POPULAIRES</h2>
 	<section class="w3-row">
@@ -39,8 +36,8 @@
 			<%= render "recipe_summary_card", recipe: @random_recipe %>
 		</article>
 	</section>
-	
 
+	
 	<% if current_user.present? %>
 		<%= render "admin_section"  %>
 	<% end %>
