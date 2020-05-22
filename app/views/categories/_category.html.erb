@@ -1,6 +1,11 @@
 <section class="w3-container">
 	<h1 class="main-title">CATEGORIE: <%= @category.title.upcase %></h1>
-	<%= image_tag @category.photo.variant(resize_to_fill: [150,150]), class: "w3-image w3-card w3-circle w3-left w3-margin-right", alt: @category.title %>
+	<%= image_tag 	@category.photo.variant(resize_to_fill: [150,150]), 
+					class: "w3-image w3-card w3-circle w3-left w3-margin-right", 
+					alt: @category.title,
+					loading: "lazy",
+					width: "150",
+					height: "150"  %>
 	<%= markdown(@category.description) %>	
 </section>
 
