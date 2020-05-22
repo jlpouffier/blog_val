@@ -1,6 +1,11 @@
 <a href="<%= category_path(category) %>">
 	<div class="w3-margin w3-display-container w3-hover-opacity hover-card">
-		<%= image_tag category.photo.variant(resize_to_fill: [350,350]), class: "w3-image w3-circle w3-card", alt: category.title %>
+		<%= image_tag 	category.photo.variant(resize_to_fill: [300,300]), 
+						class: "w3-image w3-circle w3-card", 
+						alt: category.title,
+						loading: "lazy",
+						width: "300",
+						height: "300" %>
 	</div>
 </a>
 <header class="w3-margin w3-center">

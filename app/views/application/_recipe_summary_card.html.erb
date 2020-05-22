@@ -1,6 +1,11 @@
 <a href="<%= recipe_path(recipe) %>">
 	<div class="w3-margin w3-display-container w3-hover-opacity hover-card">
-		<%= image_tag recipe.photo.variant(resize_to_fill: [600,450]), class: "w3-image w3-round-xlarge w3-card", alt: recipe.title %>
+		<%= image_tag 	recipe.photo.variant(resize_to_fill: [600,450]),
+						class: "w3-image w3-round-xlarge w3-card", 
+						alt: recipe.title,
+						loading: "lazy",
+						width: "600",
+						height: "450" %>
 		<header class="w3-display-bottomleft w3-margin w3-text-white">
 			<strong><%= recipe.title.upcase %></strong>
 			<br>
@@ -9,5 +14,8 @@
 			<%= recipe.global_time_human %>
 			</i>
 		</header>
+		<!-- <div class="w3-display-topright w3-margin">
+			<span class="w3-tag w3-green w3-round-large"><i class="fas fa-seedling"></i> VEGAN</span> 
+		</div> -->
 	</div>
 </a>
