@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_20_190749) do
+ActiveRecord::Schema.define(version: 2020_05_22_221001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_05_20_190749) do
     t.boolean "public", default: false, null: false
     t.text "tips"
     t.string "slug"
+    t.boolean "vegan", default: false, null: false
     t.index ["slug"], name: "index_recipes_on_slug", unique: true
   end
 

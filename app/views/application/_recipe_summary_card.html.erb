@@ -14,8 +14,10 @@
 			<%= recipe.global_time_human %>
 			</i>
 		</header>
-		<!-- <div class="w3-display-topright w3-margin">
-			<span class="w3-tag w3-green w3-round-large"><i class="fas fa-seedling"></i> VEGAN</span> 
-		</div> -->
+		<% if recipe.vegan? %>
+			<div class="w3-display-topright w3-margin">
+				<span class="w3-tag w3-green w3-round-large"><i class="fas fa-seedling"></i> VEGAN</span> 
+			</div>
+		<% end %>
 	</div>
 </a>

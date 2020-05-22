@@ -42,6 +42,7 @@ RailsAdmin.config do |config|
       field :preparation_time
       field :waiting_time
       field :baking_time
+      field :vegan
       field :categories
     end
   end
