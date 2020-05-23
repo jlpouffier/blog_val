@@ -44,8 +44,7 @@ class CategoriesController < ApplicationController
                     locale: "fr_FR",
                     type: "article",
                     article: {
-                      published_time: @category.created_at,
-                      author: "Valentine"
+                      published_time: @category.created_at
                     }
                   }
   end

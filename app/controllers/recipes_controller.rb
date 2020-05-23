@@ -55,8 +55,7 @@ class RecipesController < ApplicationController
                     locale: "fr_FR",
                     type: "article",
                     article: {
-                      published_time: @recipe.created_at,
-                      author: "Valentine"
+                      published_time: @recipe.created_at
                     }
                   }
   end
