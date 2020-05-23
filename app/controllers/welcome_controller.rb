@@ -17,6 +17,14 @@ class WelcomeController < ApplicationController
     set_meta_tags description: "Youpi Poutchi blog" ,
               		keywords: @latest_published_recipes.map(&:title).join(', ') + 
                             ', ' + 
-                            @most_popular_categories.map(&:title).join(', ')
+                            @most_popular_categories.map(&:title).join(', '),
+                  og: {
+                    title: :title,
+                    site_name: :site,
+                    url: request.original_url,
+                    description: :description,
+                    locale: "fr_FR",
+                    type: "website"
+                  }
   end
 end

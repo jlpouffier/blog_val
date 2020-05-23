@@ -21,7 +21,15 @@ class RecipesController < ApplicationController
     # TODO: Order the keywords and description by popularity    
     set_meta_tags title: 'Recettes',
                   description: 'Toutes les recettes: ' + @recipes.map(&:title).join(', ') + ' ...',
-                  keywords: @recipes.map(&:title).join(', ')
+                  keywords: @recipes.map(&:title).join(', '),
+                  og: {
+                    title: :title,
+                    site_name: :site,
+                    url: request.original_url,
+                    description: :description,
+                    locale: "fr_FR",
+                    type: "website"
+                  }
   end
 
   # GET /recipes/1
@@ -37,7 +45,20 @@ class RecipesController < ApplicationController
     # TODO: Order the keywords by popularity   
     set_meta_tags title: 'Recette: ' + @recipe.title,
                   description: helpers.no_markdown(@recipe.story)[0..160],
-                  keywords: @categories.map(&:title).join(', ')
+                  keywords: @categories.map(&:title).join(', '),
+                  og: {
+                    title: :title,
+                    site_name: :site,
+                    image: url_for(@recipe.photo),
+                    url: request.original_url,
+                    description: :description,
+                    locale: "fr_FR",
+                    type: "article",
+                    article: {
+                      published_time: @recipe.created_at,
+                      author: "Valentine"
+                    }
+                  }
   end
 
   # POST /recipes/id/publish

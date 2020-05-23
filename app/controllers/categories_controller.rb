@@ -10,7 +10,15 @@ class CategoriesController < ApplicationController
     # TODO: Order the keywords and description by popularity
     set_meta_tags title: 'Catégories',
                   description: 'Toutes les catérories: ' + @categories.map(&:title).join(', ') + ' ...',
-                  keywords: @categories.map(&:title).join(', ')
+                  keywords: @categories.map(&:title).join(', '),
+                  og: {
+                    title: :title,
+                    site_name: :site,
+                    url: request.original_url,
+                    description: :description,
+                    locale: "fr_FR",
+                    type: "website"
+                  }
   end
 
   # GET /categories/1
@@ -26,7 +34,20 @@ class CategoriesController < ApplicationController
     # TODO: Order the keywords by popularity   
     set_meta_tags title: 'Catégorie: ' + @category.title,
                   description: helpers.no_markdown(@category.description)[0..160],
-                  keywords: @recipes.map(&:title).join(', ')
+                  keywords: @recipes.map(&:title).join(', '),
+                  og: {
+                    title: :title,
+                    site_name: :site,
+                    image: url_for(@category.photo),
+                    url: request.original_url,
+                    description: :description,
+                    locale: "fr_FR",
+                    type: "article",
+                    article: {
+                      published_time: @category.created_at,
+                      author: "Valentine"
+                    }
+                  }
   end
 
   private
