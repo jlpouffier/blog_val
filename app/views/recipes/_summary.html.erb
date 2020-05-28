@@ -10,15 +10,15 @@
 	</i>
 </div>
 <div class="recipe-summary">
-		<i class="fas fa-bolt"></i> <strong>Difficulté</strong> | <%= @recipe.complexity_human %><br>
+		<i class="fas fa-bolt"></i> <strong>Difficulté</strong> | <%= complexity_human(@recipe) %><br>
 		<% if @recipe.preparation_time? %>
-			<i class="fas fa-play"></i> <strong>Preparation</strong> | <%= @recipe.preparation_time_human %><br>
+			<i class="fas fa-play"></i> <strong>Preparation</strong> | <%= preparation_time_human(@recipe) %><br>
 		<% end %>
 		<% if @recipe.waiting_time? %>
-			<i class="fas fa-pause"></i> <strong>Repos</strong> | <%= @recipe.waiting_time_human %><br>
+			<i class="fas fa-pause"></i> <strong>Repos</strong> | <%= waiting_time_human(@recipe) %><br>
 		<% end %>
 		<% if @recipe.baking_time? %>
-			<i class="fas fa-fire"></i> <strong>Cuisson</strong> | <%= @recipe.baking_time_human %><br>
+			<i class="fas fa-fire"></i> <strong>Cuisson</strong> | <%= baking_time_human(@recipe) %><br>
 		<% end %>
 	</p>
 </div>

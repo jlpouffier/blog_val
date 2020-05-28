@@ -10,8 +10,8 @@
 			<strong><%= recipe.title.upcase %></strong>
 			<br>
 			<i>
-			<%= recipe.complexity_human %> |
-			<%= recipe.global_time_human %>
+			<%= complexity_human(recipe) %> |
+			<%= global_time_human(recipe) %>
 			</i>
 		</header>
 		<% if recipe.vegan? %>
